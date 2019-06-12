@@ -1,0 +1,6 @@
+framework module Pods_HarshBhatnagarUITests {
+  umbrella header "Pods-HarshBhatnagarUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
