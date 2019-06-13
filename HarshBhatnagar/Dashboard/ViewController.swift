@@ -7,6 +7,8 @@
 //
 import LocalAuthentication
 import UIKit
+import SideMenu
+
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ReturnDataFromDashboadCollectionProtocol{
    
@@ -19,11 +21,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let dataModle = DataModal()
     
 
+    
+    @IBAction func didTapMenuBtn(_ sender: Any) {
+        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+    }
+    
     @IBOutlet weak var billarView: UIView!
     @IBOutlet weak var tableOutlet: UITableView!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle
+    {
+        return UIStatusBarStyle.lightContent;
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSideMenu()
+        
+        
         
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -49,7 +64,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //DashboardTableViewCell
         let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardTableViewCell") as! DashboardTableViewCell
-        
+        cell.indexing = indexPath.row
         cell.lblTableTitle.text = tableArray[indexPath.row]
         cell.collectionViewOutlet.reloadData()
         cell.delegate = self
@@ -91,14 +106,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @objc func setupSideMenu()
     {
         //SideMenuViewController side
-//        let leftvc = SideMenuViewController(nibName : "SideMenuViewController", bundle : nil)
-//        let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: leftvc)
-//        menuLeftNavigationController.isNavigationBarHidden = true
-//        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
-//        SideMenuManager.default.menuRightNavigationController = nil
-//
-//        SideMenuManager.default.menuWidth = ConstantSwift.screenSize.width - 100
-//        SideMenuManager.default.menuFadeStatusBar = false
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let menuController = storyBoard.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
+        
+//        let menuController = SideMenuViewController(nibName : "SideMenuViewController", bundle : nil)
+        let menuNavigationController = UISideMenuNavigationController(rootViewController: menuController)
+        menuNavigationController.isNavigationBarHidden = true
+        SideMenuManager.default.menuLeftNavigationController = menuNavigationController
+        SideMenuManager.default.menuRightNavigationController = nil
+        SideMenuManager.default.menuWidth = ConstantSwift.screenSize.width - 100
+        SideMenuManager.default.menuFadeStatusBar = false
+
         
     }
     

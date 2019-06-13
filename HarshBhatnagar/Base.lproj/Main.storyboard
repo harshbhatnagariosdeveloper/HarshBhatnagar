@@ -123,9 +123,22 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P94-d0-kRY">
+                                        <rect key="frame" x="4" y="36" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="H88-UA-6j5"/>
+                                            <constraint firstAttribute="width" constant="44" id="eJe-H3-HlO"/>
+                                        </constraints>
+                                        <state key="normal" image="burger_ic"/>
+                                        <connections>
+                                            <action selector="didTapMenuBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YQS-Ko-tK9"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.45861971378326416" blue="0.46808254718780518" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="P94-d0-kRY" firstAttribute="leading" secondItem="9rV-Gq-gTP" secondAttribute="leading" constant="4" id="RUQ-s5-KsO"/>
+                                    <constraint firstAttribute="bottom" secondItem="P94-d0-kRY" secondAttribute="bottom" id="T8V-9X-kKg"/>
                                     <constraint firstItem="qz6-zP-tW5" firstAttribute="centerX" secondItem="9rV-Gq-gTP" secondAttribute="centerX" id="fLG-Om-6pd"/>
                                     <constraint firstAttribute="height" constant="80" id="ktT-lf-rhc"/>
                                     <constraint firstAttribute="bottom" secondItem="qz6-zP-tW5" secondAttribute="bottom" constant="8" id="rhS-6j-cKA"/>
@@ -157,6 +170,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
+        </scene>
+        <!--Add Categories View Controller-->
+        <scene sceneID="4GZ-3w-lHs">
+            <objects>
+                <viewController storyboardIdentifier="AddCategoriesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qZ1-Op-tSV" customClass="AddCategoriesViewController" customModule="HarshBhatnagar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Se2-Cx-tw8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMt-ch-ERA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Categorie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UjD-4a-aL4">
+                                        <rect key="frame" x="150.5" y="53" width="113" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="113" id="Ub2-1a-nK7"/>
+                                            <constraint firstAttribute="height" constant="19" id="dNl-fV-Q8T"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.4586197138" blue="0.46808254719999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="UjD-4a-aL4" secondAttribute="bottom" constant="8" id="X1c-Se-nPM"/>
+                                    <constraint firstItem="UjD-4a-aL4" firstAttribute="centerX" secondItem="MMt-ch-ERA" secondAttribute="centerX" id="c5O-LI-Acm"/>
+                                    <constraint firstAttribute="height" constant="80" id="oho-ZX-m7d"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MMt-ch-ERA" firstAttribute="trailing" secondItem="bnP-fH-SQi" secondAttribute="trailing" id="Fou-1g-NRj"/>
+                            <constraint firstItem="MMt-ch-ERA" firstAttribute="top" secondItem="Se2-Cx-tw8" secondAttribute="top" id="WTC-dP-oEJ"/>
+                            <constraint firstItem="MMt-ch-ERA" firstAttribute="leading" secondItem="bnP-fH-SQi" secondAttribute="leading" id="hDl-0B-yLr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bnP-fH-SQi"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ty5-8s-kxN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="779" y="100"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="NeQ-qG-6e9">
@@ -207,7 +263,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMN-VS-d0P">
                                         <rect key="frame" x="0.0" y="150" width="414" height="746"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ygU-7V-dHw">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ygU-7V-dHw">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="746"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <connections>
@@ -260,4 +316,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="786.83035714285711"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="burger_ic" width="20" height="15"/>
+    </resources>
 </document>

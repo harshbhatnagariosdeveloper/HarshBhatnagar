@@ -10,8 +10,9 @@ import UIKit
 
 class DashboardTableViewCell: UITableViewCell , UICollectionViewDelegate, UICollectionViewDataSource {
     
-    
-    var collectionArray:[String] = []
+    var indexing: Int = 0
+//    var collectionArray:[String] = []
+    var collectionofArrays:[[String]] = [[]]
     let dataModle = DataModal()
     var retunData:String = ""
     var delegate: ReturnDataFromDashboadCollectionProtocol?
@@ -23,8 +24,8 @@ class DashboardTableViewCell: UITableViewCell , UICollectionViewDelegate, UIColl
         // Initialization code
         collectionViewOutlet.delegate = self
         collectionViewOutlet.dataSource = self
-        collectionArray = dataModle.dashboadCollectionArray()
-        
+        collectionofArrays = dataModle.dashboadCollectionArray()
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -35,17 +36,24 @@ class DashboardTableViewCell: UITableViewCell , UICollectionViewDelegate, UIColl
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        let collectionArray:[String] = collectionofArrays[indexing]
         return collectionArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellIdentify = "DashboardCollectionViewCell"
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentify, for: indexPath) as? DashboardCollectionViewCell
+        
+        let collectionArray:[String] = collectionofArrays[indexing]
         cell?.configure(with: collectionArray[indexPath.row],index: indexPath.row)
+        
         return cell!
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("indexing didSelectItemAt ==>",indexing)
+        let collectionArray:[String] = collectionofArrays[indexing]
         retunData = collectionArray[indexPath.row]
         if delegate != nil {
              delegate?.fromcollectionView(Val: retunData)

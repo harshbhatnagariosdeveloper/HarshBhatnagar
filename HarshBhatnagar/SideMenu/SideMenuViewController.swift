@@ -8,12 +8,14 @@
 
 import UIKit
 
-class SideMenuViewController: UIViewController {
+class SideMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+   
+    
 
     
     @objc let screenSize = UIScreen.main.bounds
     @objc let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    @objc var newTable_Array : Array<Any> = []
+    @objc var newTable_Array : [String] = ["Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie"]
     
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var upperView: UIView!
@@ -28,6 +30,13 @@ class SideMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let nib1 = UINib(nibName: "Cell", bundle: nil)
+//        tableOutlet.register(nib1, forCellReuseIdentifier: "Cell")
+        tableOutlet.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableOutlet.delegate = self
+        tableOutlet.dataSource = self
+        tableOutlet.reloadData()
         
         
     }
@@ -65,4 +74,26 @@ class SideMenuViewController: UIViewController {
     }
     
     
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 55
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return newTable_Array.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = newTable_Array[indexPath.row]
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        
+    }
 }
