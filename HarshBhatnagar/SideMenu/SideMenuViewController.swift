@@ -11,21 +11,30 @@ import UIKit
 class SideMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     
-
+//["key": " " ,"value": " " ]
     
     @objc let screenSize = UIScreen.main.bounds
     @objc let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    @objc var newTable_Array : [String] = ["Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie"]
+    @objc var newTable_Array : [[String:Any]] = [["key": "Github Repository" ,"value": "https://github.com/harshbhatnagariosdeveloper/HarshBhatnagar" ],["key": "Facebook" ,"value": "https://www.facebook.com/harshbhatnagar2008" ],["key": "Linkedin" ,"value": "http://linkedin.com/in/harsh-bhatnagar-966a61145" ],["key": "Instagram" ,"value": "https://www.instagram.com/invites/contact/?i=1w2m73o22jzds&utm_content=2lf2rt7"],["key": "Skype" ,"value": "https://join.skype.com/invite/myUYg0HwtGyX" ]]
     
+    @IBOutlet weak var labelUserName: UILabel!
+
+    @IBOutlet weak var labelAboutUser: UILabel!
+    @IBOutlet weak var labelJobRole: UILabel!
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var userImage: UIImageView!
     
-    @IBOutlet weak var imageBGView: UIView!
+    @IBOutlet weak var imageBGView: CardView!
     @IBAction func uploadUserImage(_ sender: Any) {
     }
     @IBOutlet weak var tableBGview: UIView!
     @IBOutlet weak var tableOutlet: UITableView!
+    
+    //userNameHight aboutUserHight  jobRoleHight
+    @IBOutlet weak var userNameHight: NSLayoutConstraint!
+    @IBOutlet weak var jobRoleHight: NSLayoutConstraint!
+    @IBOutlet weak var aboutUserHight: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
@@ -34,10 +43,12 @@ class SideMenuViewController: UIViewController, UITableViewDelegate, UITableView
 //        let nib1 = UINib(nibName: "Cell", bundle: nil)
 //        tableOutlet.register(nib1, forCellReuseIdentifier: "Cell")
         tableOutlet.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableOutlet.estimatedRowHeight = 100
         tableOutlet.delegate = self
         tableOutlet.dataSource = self
         tableOutlet.reloadData()
-        
+        changesInUI()
+
         
     }
     
@@ -48,7 +59,20 @@ class SideMenuViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @objc func changesInUI()  {
-        imageBGView.layer.cornerRadius = 8
+//        imageBGView.layer.cornerRadius = imageBGView.frame.width / 2
+        imageBGView.layer.cornerRadius = 16.0//userImage.frame.width / 2
+        userImage.layer.cornerRadius = 16.0//userImage.frame.width / 2
+        
+        labelUserName.text = "Harsh Bhatnagar"
+        labelJobRole.text = "Senior Developer Mobile Solution L 1"
+        labelAboutUser.text = "Working as a iOS Developer from February 2016."
+        
+        labelUserName.numberOfLines = 0
+        labelJobRole.numberOfLines = 0
+        labelAboutUser.numberOfLines = 0
+        userNameHight.constant = labelUserName.getHeightForUIlabel() + 10
+        aboutUserHight.constant = labelAboutUser.getHeightForUIlabel() + 10
+        jobRoleHight.constant = labelJobRole.getHeightForUIlabel() + 10
         
     }
     
@@ -80,7 +104,15 @@ class SideMenuViewController: UIViewController, UITableViewDelegate, UITableView
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 55
+        
+        let dict :[String:Any] = newTable_Array[indexPath.row]
+        let keyStr = dict["key"] as? String ?? ""
+        let valueStr = dict["value"] as? String ?? ""
+        let lbl = UILabel.init(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        lbl.numberOfLines = 0
+        lbl.text =  valueStr
+        let hight = lbl.getHeightForUIlabel()
+        return hight
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -88,12 +120,28 @@ class SideMenuViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = newTable_Array[indexPath.row]
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.value2, reuseIdentifier: "Cell")
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let dict :[String:Any] = newTable_Array[indexPath.row]
+        let keyStr = dict["key"] as? String ?? ""
+        let valueStr = dict["value"] as? String ?? ""
+        cell.textLabel?.text = keyStr
+        cell.detailTextLabel?.text = valueStr
+        cell.detailTextLabel?.numberOfLines = 0
+        cell.textLabel?.numberOfLines = 0
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         
+        let dict :[String:Any] = newTable_Array[indexPath.row]
+        let keyStr = dict["key"] as? String ?? ""
+        let valueStr = dict["value"] as? String ?? ""
+        
+        let commonWebview = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CommonWebviewViewController") as? CommonWebviewViewController
+        commonWebview?.urlStr = valueStr
+        commonWebview?.titleStr = keyStr
+                
+        self.navigationController?.pushViewController(commonWebview!, animated: true)
     }
 }
