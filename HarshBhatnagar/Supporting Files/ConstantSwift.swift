@@ -18,7 +18,16 @@ class ConstantSwift
     
     static let UserDefault = UserDefaults.standard
     static let Syncronize = UserDefault.synchronize()
-     
+    
+    //    static let userDefaults.set(value, forKey: keyname)
+    //
+    //    struct UserDefault
+    //    {
+    //        static let UserDefaults.standard.set(value, forKey: keyname) //Bool
+    //
+    //    }
+    
+    
     struct Colors
     {
         static let NavigationColorCRMLeft = UIColor(red: 45.0/255.0, green: 38.0/255.0, blue: 111.0/255.0, alpha: 1)
