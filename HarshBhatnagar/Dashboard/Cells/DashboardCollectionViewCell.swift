@@ -9,8 +9,12 @@
 import UIKit
 
 class DashboardCollectionViewCell: UICollectionViewCell {
+    
+    //MARK: - IBOutlet
     @IBOutlet weak var lblCollection: UILabel!
     
+    
+    //MARK: - func
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -10,6 +10,9 @@
 		0013C89D43109AFDCA6E66BE /* Pods_HarshBhatnagarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DCF9939D08E18CF9E73ED4 /* Pods_HarshBhatnagarTests.framework */; };
 		16157C628610A178518CADCA /* Pods_HarshBhatnagar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C14C7DC4BD1EE09570F699 /* Pods_HarshBhatnagar.framework */; };
 		3F5DA18B45E3311BEEEDE3F6 /* Pods_HarshBhatnagarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61BB35A8A527C77E8A3EC71 /* Pods_HarshBhatnagarUITests.framework */; };
+		6A03903F24A3B15E00C591D7 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A03903E24A3B15E00C591D7 /* AppHelper.swift */; };
+		6A03904124A3B46100C591D7 /* AppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A03904024A3B46100C591D7 /* AppExtension.swift */; };
+		6A03904324A3B66400C591D7 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A03904224A3B66400C591D7 /* AppConstant.swift */; };
 		6A58E2CD22AF9C9600118E92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A58E2CC22AF9C9600118E92 /* AppDelegate.swift */; };
 		6A58E2CF22AF9C9600118E92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A58E2CE22AF9C9600118E92 /* ViewController.swift */; };
 		6A58E2D222AF9C9600118E92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A58E2D022AF9C9600118E92 /* Main.storyboard */; };
@@ -24,11 +27,7 @@
 		6A58E30822AFB93000118E92 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A58E30722AFB93000118E92 /* AudioToolbox.framework */; };
 		6A58E30A22AFB93700118E92 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A58E30922AFB93700118E92 /* MapKit.framework */; };
 		6A58E30C22AFB95B00118E92 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A58E30B22AFB95B00118E92 /* ExternalAccessory.framework */; };
-		6A58E31222AFB99E00118E92 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A58E31122AFB99E00118E92 /* StoreKit.framework */; };
 		6AEB461822AFD63200BA8CFA /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB461722AFD63200BA8CFA /* SideMenuViewController.swift */; };
-		6AEB461D22B0CE0100BA8CFA /* AddCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB461C22B0CE0100BA8CFA /* AddCategoriesViewController.swift */; };
-		6AEB462022B0D14B00BA8CFA /* ConstantSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB461F22B0D14B00BA8CFA /* ConstantSwift.swift */; };
-		6AEB462222B0D9C700BA8CFA /* incoming.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6AEB462122B0D9C700BA8CFA /* incoming.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +50,10 @@
 /* Begin PBXFileReference section */
 		081A6B0CFD10015DA2ABCFE1 /* Pods-HarshBhatnagarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarshBhatnagarUITests.debug.xcconfig"; path = "Target Support Files/Pods-HarshBhatnagarUITests/Pods-HarshBhatnagarUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		27C14C7DC4BD1EE09570F699 /* Pods_HarshBhatnagar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HarshBhatnagar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A58E2C922AF9C9600118E92 /* HarshBhatnagar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarshBhatnagar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A03903E24A3B15E00C591D7 /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
+		6A03904024A3B46100C591D7 /* AppExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExtension.swift; sourceTree = "<group>"; };
+		6A03904224A3B66400C591D7 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		6A58E2C922AF9C9600118E92 /* TrackQS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackQS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A58E2CC22AF9C9600118E92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A58E2CE22AF9C9600118E92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6A58E2D122AF9C9600118E92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,11 +74,7 @@
 		6A58E30722AFB93000118E92 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		6A58E30922AFB93700118E92 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6A58E30B22AFB95B00118E92 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
-		6A58E31122AFB99E00118E92 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		6AEB461722AFD63200BA8CFA /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
-		6AEB461C22B0CE0100BA8CFA /* AddCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoriesViewController.swift; sourceTree = "<group>"; };
-		6AEB461F22B0D14B00BA8CFA /* ConstantSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantSwift.swift; sourceTree = "<group>"; };
-		6AEB462122B0D9C700BA8CFA /* incoming.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = incoming.wav; sourceTree = "<group>"; };
 		85C6BBFD032FCFB0B8FABE54 /* Pods-HarshBhatnagarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarshBhatnagarTests.release.xcconfig"; path = "Target Support Files/Pods-HarshBhatnagarTests/Pods-HarshBhatnagarTests.release.xcconfig"; sourceTree = "<group>"; };
 		B2399876C0A95EBCF850D542 /* Pods-HarshBhatnagarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarshBhatnagarUITests.release.xcconfig"; path = "Target Support Files/Pods-HarshBhatnagarUITests/Pods-HarshBhatnagarUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B79CCA152FE33FCE2BEC805C /* Pods-HarshBhatnagar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarshBhatnagar.release.xcconfig"; path = "Target Support Files/Pods-HarshBhatnagar/Pods-HarshBhatnagar.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 			files = (
 				6A58E30622AFB91F00118E92 /* HealthKit.framework in Frameworks */,
 				6A58E30A22AFB93700118E92 /* MapKit.framework in Frameworks */,
-				6A58E31222AFB99E00118E92 /* StoreKit.framework in Frameworks */,
 				6A58E30C22AFB95B00118E92 /* ExternalAccessory.framework in Frameworks */,
 				6A58E30822AFB93000118E92 /* AudioToolbox.framework in Frameworks */,
 				16157C628610A178518CADCA /* Pods_HarshBhatnagar.framework in Frameworks */,
@@ -147,7 +144,7 @@
 		6A58E2CA22AF9C9600118E92 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6A58E2C922AF9C9600118E92 /* HarshBhatnagar.app */,
+				6A58E2C922AF9C9600118E92 /* TrackQS.app */,
 				6A58E2DD22AF9C9700118E92 /* HarshBhatnagarTests.xctest */,
 				6A58E2E822AF9C9700118E92 /* HarshBhatnagarUITests.xctest */,
 			);
@@ -158,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				6AEB461E22B0D13900BA8CFA /* Supporting Files */,
-				6AEB461B22B0CDF100BA8CFA /* AddCategories */,
 				6AEB461622AFD61400BA8CFA /* SideMenu */,
 				6A58E30022AFA96600118E92 /* DataModal */,
 				6A58E2FA22AFA06500118E92 /* Dashboard */,
@@ -219,7 +215,6 @@
 		6A58E30422AFB91F00118E92 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6A58E31122AFB99E00118E92 /* StoreKit.framework */,
 				6A58E30B22AFB95B00118E92 /* ExternalAccessory.framework */,
 				6A58E30922AFB93700118E92 /* MapKit.framework */,
 				6A58E30722AFB93000118E92 /* AudioToolbox.framework */,
@@ -239,19 +234,12 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
-		6AEB461B22B0CDF100BA8CFA /* AddCategories */ = {
-			isa = PBXGroup;
-			children = (
-				6AEB461C22B0CE0100BA8CFA /* AddCategoriesViewController.swift */,
-			);
-			path = AddCategories;
-			sourceTree = "<group>";
-		};
 		6AEB461E22B0D13900BA8CFA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6AEB462122B0D9C700BA8CFA /* incoming.wav */,
-				6AEB461F22B0D14B00BA8CFA /* ConstantSwift.swift */,
+				6A03903E24A3B15E00C591D7 /* AppHelper.swift */,
+				6A03904024A3B46100C591D7 /* AppExtension.swift */,
+				6A03904224A3B66400C591D7 /* AppConstant.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -275,7 +263,7 @@
 			);
 			name = HarshBhatnagar;
 			productName = HarshBhatnagar;
-			productReference = 6A58E2C922AF9C9600118E92 /* HarshBhatnagar.app */;
+			productReference = 6A58E2C922AF9C9600118E92 /* TrackQS.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6A58E2DC22AF9C9700118E92 /* HarshBhatnagarTests */ = {
@@ -420,7 +408,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AEB462222B0D9C700BA8CFA /* incoming.wav in Resources */,
 				6A58E2D722AF9C9700118E92 /* LaunchScreen.storyboard in Resources */,
 				6A58E2D422AF9C9700118E92 /* Assets.xcassets in Resources */,
 				6A58E2D222AF9C9600118E92 /* Main.storyboard in Resources */,
@@ -534,12 +521,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A03904324A3B66400C591D7 /* AppConstant.swift in Sources */,
 				6A58E2FD22AFA0CF00118E92 /* DashboardTableViewCell.swift in Sources */,
 				6A58E2FF22AFA0F400118E92 /* DashboardCollectionViewCell.swift in Sources */,
 				6A58E2CF22AF9C9600118E92 /* ViewController.swift in Sources */,
+				6A03904124A3B46100C591D7 /* AppExtension.swift in Sources */,
 				6A58E30222AFA99200118E92 /* DataModal.swift in Sources */,
-				6AEB461D22B0CE0100BA8CFA /* AddCategoriesViewController.swift in Sources */,
-				6AEB462022B0D14B00BA8CFA /* ConstantSwift.swift in Sources */,
+				6A03903F24A3B15E00C591D7 /* AppHelper.swift in Sources */,
 				6AEB461822AFD63200BA8CFA /* SideMenuViewController.swift in Sources */,
 				6A58E2CD22AF9C9600118E92 /* AppDelegate.swift in Sources */,
 			);
@@ -718,15 +706,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HarshBhatnagar/HarshBhatnagar.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5ZCKHCYNY4;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 62L4W847X9;
 				INFOPLIST_FILE = HarshBhatnagar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SSHProject.HarshBhatnagar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mindful.trackers;
+				PRODUCT_NAME = TrackQS;
+				PROVISIONING_PROFILE_SPECIFIER = TracksQS_MindfulTracker;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -738,15 +728,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HarshBhatnagar/HarshBhatnagar.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5ZCKHCYNY4;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 62L4W847X9;
 				INFOPLIST_FILE = HarshBhatnagar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SSHProject.HarshBhatnagar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mindful.trackers;
+				PRODUCT_NAME = TrackQS;
+				PROVISIONING_PROFILE_SPECIFIER = TracksQS_MindfulTracker;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

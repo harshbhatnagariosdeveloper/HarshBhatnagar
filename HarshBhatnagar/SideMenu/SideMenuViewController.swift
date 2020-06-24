@@ -8,37 +8,36 @@
 
 import UIKit
 
-class SideMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SideMenuViewController: UIViewController {
    
     
 
+    //MARK: - Variables
+    @objc var newTable_Array : [String] = [Str_AddCategorie,Str_AddCategorie,Str_AddCategorie,Str_AddCategorie,Str_AddCategorie,Str_AddCategorie,Str_AddCategorie,Str_AddCategorie,Str_AddCategorie,Str_AddCategorie,Str_AddCategorie,Str_AddCategorie]
     
-    @objc let screenSize = UIScreen.main.bounds
-    @objc let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    @objc var newTable_Array : [String] = ["Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie","Add Categorie"]
-    
+    //MARK: - IBOutlet
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var upperView: UIView!
+    @IBOutlet weak var upperViewCH: NSLayoutConstraint!
+    @IBOutlet weak var labelUserName: UILabel!
+    @IBOutlet weak var labelUserNameCH: NSLayoutConstraint!
+    @IBOutlet weak var labelUserPossition: UILabel!
+    @IBOutlet weak var labelUserPossitionCH: NSLayoutConstraint!
+    @IBOutlet weak var labelUserContact: UILabel!
+    @IBOutlet weak var labelUserContactCH: NSLayoutConstraint!
     @IBOutlet weak var userImage: UIImageView!
-    
     @IBOutlet weak var imageBGView: UIView!
-    @IBAction func uploadUserImage(_ sender: Any) {
-    }
     @IBOutlet weak var tableBGview: UIView!
     @IBOutlet weak var tableOutlet: UITableView!
     
-    
+    //MARK: - func
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let nib1 = UINib(nibName: "Cell", bundle: nil)
-//        tableOutlet.register(nib1, forCellReuseIdentifier: "Cell")
-        tableOutlet.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableOutlet.register(UITableViewCell.self, forCellReuseIdentifier: str_Cell)
         tableOutlet.delegate = self
         tableOutlet.dataSource = self
         tableOutlet.reloadData()
-        
-        
+        changesInUI()  
     }
     
     
@@ -50,30 +49,31 @@ class SideMenuViewController: UIViewController, UITableViewDelegate, UITableView
     @objc func changesInUI()  {
         imageBGView.layer.cornerRadius = 8
         
+        labelUserName.text = str_UserName
+        labelUserNameCH.constant = 21
+        
+        labelUserPossition.text = str_UserProfile
+        labelUserPossitionCH.constant =    labelUserPossition.getHeightForUIlabel() + 20
+        
+        labelUserContact.text = str_UserEmailID
+        labelUserContactCH.constant =    labelUserContact.getHeightForUIlabel() + 20
+        upperViewCH.constant = upperViewCH.constant + (labelUserPossitionCH.constant - 21) + (labelUserContactCH.constant - 21)
+
+        imageBGView.clipsToBounds = true
+        userImage.clipsToBounds = true
+        imageBGView.layer.cornerRadius = 16
+        userImage.layer.cornerRadius = 16
+        
     }
-    
-    @objc func setCAGradientLayer(_ colorLeft1: UIColor?, colorRight colorRight1: UIColor?, yourView yourView1: UIView?) {
-        let maskLayer2 = CAGradientLayer()
-        maskLayer2.colors = [(colorRight1?.cgColor as? Any), (colorLeft1?.cgColor as? Any)]
-        //        maskLayer2.colors = [colorRight1?.cgColor, colorLeft1?.cgColor]
-        yourView1?.backgroundColor = UIColor.clear
-        maskLayer2.frame = yourView1?.bounds ?? CGRect.zero
-        yourView1?.layer.insertSublayer(maskLayer2, at: 0)
-    }
-    
-    
-    @objc func getGradientView(view : UIView, color1 : UIColor, color2 : UIColor, start:CGPoint, end:CGPoint) -> CAGradientLayer
-    {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = view.bounds
-        gradientLayer.colors = [color1.cgColor, color2.cgColor]
-        gradientLayer.startPoint = start
-        gradientLayer.endPoint = end
-        gradientLayer.frame = view.bounds
-        return gradientLayer
+    //MARK: - IBAction
+    @IBAction func uploadUserImage(_ sender: Any) {
     }
     
     
+}
+
+
+extension SideMenuViewController : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -88,7 +88,7 @@ class SideMenuViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: str_Cell, for: indexPath)
         cell.textLabel?.text = newTable_Array[indexPath.row]
         return cell
     }
@@ -96,4 +96,6 @@ class SideMenuViewController: UIViewController, UITableViewDelegate, UITableView
     {
         
     }
+    
+    
 }

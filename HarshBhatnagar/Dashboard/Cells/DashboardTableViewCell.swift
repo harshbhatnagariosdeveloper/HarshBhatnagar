@@ -10,15 +10,18 @@ import UIKit
 
 class DashboardTableViewCell: UITableViewCell , UICollectionViewDelegate, UICollectionViewDataSource {
     
+    //MARK: - Variables
     var indexing: Int = 0
-//    var collectionArray:[String] = []
     var collectionofArrays:[[String]] = [[]]
     let dataModle = DataModal()
     var retunData:String = ""
     var delegate: ReturnDataFromDashboadCollectionProtocol?
+    
+    //MARK: - IBOutlet
     @IBOutlet weak var lblTableTitle: UILabel!
     @IBOutlet weak var collectionViewOutlet: UICollectionView!
     
+    //MARK: - func
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -34,7 +37,7 @@ class DashboardTableViewCell: UITableViewCell , UICollectionViewDelegate, UIColl
         // Configure the view for the selected state
     }
 
-    
+    //MARK: - CollectionView Delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         let collectionArray:[String] = collectionofArrays[indexing]
@@ -42,7 +45,7 @@ class DashboardTableViewCell: UITableViewCell , UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellIdentify = "DashboardCollectionViewCell"
+        let cellIdentify = str_DashboardCollectionViewCell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentify, for: indexPath) as? DashboardCollectionViewCell
         
         let collectionArray:[String] = collectionofArrays[indexing]
@@ -52,7 +55,6 @@ class DashboardTableViewCell: UITableViewCell , UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("indexing didSelectItemAt ==>",indexing)
         let collectionArray:[String] = collectionofArrays[indexing]
         retunData = collectionArray[indexPath.row]
         if delegate != nil {
@@ -63,6 +65,7 @@ class DashboardTableViewCell: UITableViewCell , UICollectionViewDelegate, UIColl
     }
  }
 
+//MARK: - protocol
 protocol ReturnDataFromDashboadCollectionProtocol {
     func fromcollectionView(Val:String)
 }
